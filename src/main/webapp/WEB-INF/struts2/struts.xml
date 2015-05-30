@@ -7,9 +7,23 @@
 <struts>
 
     <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.i18n.reload" value="true"/>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <!--开发阶段配置，在web服务器出错时会尽量打印出来，一样也是生产阶段设置为false，避免后台结构被人发现。-->
+    <constant name="struts.configuration.xml.reload" value="true"/>
 
     <!-- caution: in release version, this value must be set false -->
     <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="login"
+                class="com.aiziyuer.webapp.login.action.LoginAction" >
+            <result name="success">login/index.jsp</result>
+        </action>
+    </package>
 
 
 </struts>
