@@ -10,21 +10,40 @@
 
     <properties>
         <spring.version>4.0.3.RELEASE</spring.version>
+        <struts.version>2.3.16</struts.version>
     </properties>
 
     <dependencies>
+        <!--前台界面框架 开始-->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>2.3.16</version>
+            <version>${struts.version}</version>
         </dependency>
 
+        <!--tiles 主要用于页面布局，非常灵活-->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-tiles-plugin</artifactId>
-            <version>2.3.16</version>
+            <version>${struts.version}</version>
         </dependency>
 
+        <!--界面jstl标签库使用-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!--DWR框架:使用js直接调用后台的java的service-->
+        <dependency>
+            <groupId>org.directwebremoting</groupId>
+            <artifactId>dwr</artifactId>
+            <version>3.0.0-RELEASE</version>
+        </dependency>
+        <!--前台界面框架 结束-->
+
+        <!--对象托管及数据库事务管理 开始-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -48,17 +67,13 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!--对象托管及数据库事务管理 开始-->
 
+        <!--数据库连接库-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.29</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.directwebremoting</groupId>
-            <artifactId>dwr</artifactId>
-            <version>3.0.0-RELEASE</version>
         </dependency>
 
     </dependencies>
