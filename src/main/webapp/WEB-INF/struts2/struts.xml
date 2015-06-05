@@ -6,9 +6,12 @@
 
 <struts>
 
+    <!--刷新国际化资源-->
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.i18n.reload" value="true"/>
 
+
+    <!--出错时会提示更详细的错误信息-->
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
 
     <!--开发阶段配置，在web服务器出错时会尽量打印出来，一样也是生产阶段设置为false，避免后台结构被人发现。-->
