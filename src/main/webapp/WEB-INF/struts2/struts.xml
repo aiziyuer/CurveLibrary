@@ -21,10 +21,13 @@
     <constant name="struts.devMode" value="true"/>
 
     <package name="default" namespace="/" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
 
         <action name="login"
                 class="com.aiziyuer.webapp.login.action.LoginAction" >
-            <result name="success">login/index.jsp</result>
+            <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
         </action>
     </package>
 

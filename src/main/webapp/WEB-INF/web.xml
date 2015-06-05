@@ -9,6 +9,17 @@
 
     <display-name>CurveLibrary</display-name>
 
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+    </context-param>
+
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
@@ -23,20 +34,18 @@
         <url-pattern>*.action</url-pattern>
     </filter-mapping>
 
-
     <listener>
         <listener-class>
-            org.springframework.web.context.ContextLoaderListener
+            org.apache.struts2.tiles.StrutsTilesListener
         </listener-class>
     </listener>
 
     <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+        <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+        <param-value>/WEB-INF/struts2/tiles.xml</param-value>
     </context-param>
 
     <servlet>
-        <display-name>DWR Servlet</display-name>
         <servlet-name>dwr-invoker</servlet-name>
         <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
         <init-param>
