@@ -7,7 +7,6 @@
 <tiles-definitions>
 
     <definition name="baseLayout" template="/framework/base.jsp">
-        <put-attribute name="title"  value="Tiles Template"/>
         <put-attribute name="header" value="/framework/_header.jsp"/>
         <put-attribute name="nav" value="/framework/_nav.jsp"/>
         <put-attribute name="body" value="Hello Tiles Template!"/>

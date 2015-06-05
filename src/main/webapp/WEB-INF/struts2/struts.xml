@@ -7,6 +7,7 @@
 <struts>
 
     <!--刷新国际化资源-->
+    <constant name="struts.custom.i18n.resources" value="*.properties"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.i18n.reload" value="true"/>
 
