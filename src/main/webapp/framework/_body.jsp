@@ -7,3 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<div class="container">
+    <div class="page-header">
+        <h1>内容标题</h1>
+    </div>
+    <p class="lead">这里是我的内容</p>
+</div>
