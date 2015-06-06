@@ -7,7 +7,6 @@
     <option name="importPaths">
       <list>
         <option value="$USER_HOME$/.rvm/gems/ruby-2.0.0-p643/gems/compass-core-1.0.3/stylesheets" />
-        <option value="$USER_HOME$/.rvm/gems/ruby-2.0.0-p643/gems/bootstrap-sass-3.3.4.1/assets/stylesheets" />
       </list>
     </option>
   </component>

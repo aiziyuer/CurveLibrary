@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 // Import Bootstrap Compass integration
 @import "../../../../../../../../../../.rvm/gems/ruby-2.0.0-p643/gems/bootstrap-sass-3.3.4.1/assets/stylesheets/bootstrap-compass";
 
@@ -8,3 +10,8 @@
 @import "../../../../../../../../../../.rvm/gems/ruby-2.0.0-p643/gems/bootstrap-sass-3.3.4.1/assets/stylesheets/bootstrap";
 
 @import "framework";
+
+body
+{
+  padding-top: $navbar-height;
+}
