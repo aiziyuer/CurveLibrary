@@ -4,6 +4,9 @@
 $foot-bg-color: #f5f5f5;
 $foot-height: 60px;
 
+// 导航栏高度
+$navbar-height: 50px;
+
 html {
   // 这里必须要设置最小高度是100%，相对布局， 才能是footer正常显示在底部
   min-height: 100%;
@@ -11,10 +14,12 @@ html {
 }
 
 body {
+  // 声明内容必须距离底单一定的距离，这样当底栏因为界面缩小而上升时不会漂浮在页面上
   margin-bottom: $foot-height;
+  padding-top: $navbar-height;
 }
 
-.footer {
+footer {
   background-color: $foot-bg-color;
   bottom: 0;
   clear: both;
@@ -25,4 +30,11 @@ body {
 
 footer > .container > .text-muted {
   margin: 20px 0;
+}
+
+// 因为我们的导航中最后一个菜单带有下拉选项，所以右margin修正为0px
+@media (min-width: 768px) {
+  .navbar-right {
+    margin-right: 0;
+  }
 }
