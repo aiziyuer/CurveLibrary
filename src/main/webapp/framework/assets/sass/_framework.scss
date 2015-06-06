@@ -16,6 +16,9 @@ html {
 body {
   // 声明内容必须距离底单一定的距离，这样当底栏因为界面缩小而上升时不会漂浮在页面上
   margin-bottom: $foot-height;
+}
+
+body > .container {
   padding-top: $navbar-height;
 }
 
