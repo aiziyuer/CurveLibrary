@@ -8,9 +8,12 @@
 
     <import resource="applicationContext-jdbc.xml"/>
 
-    <task:executor id="myExecutor" pool-size="5" />
+    <bean id="serviceLocator" class="com.aiziyuer.webapp.framework.ServiceLocator"
+          lazy-init="false"/>
+
+    <task:executor id="myExecutor" pool-size="5"/>
     <task:scheduler id="myScheduler" pool-size="10"/>
     <task:annotation-driven executor="myExecutor"
-                            scheduler="myScheduler" />
+                            scheduler="myScheduler"/>
 
 </beans>
