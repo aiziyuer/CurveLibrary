@@ -7,12 +7,15 @@ import com.sun.istack.internal.logging.Logger;
 /**
  * 登录类
  */
-public class LoginAction extends BaseAction {
+public class UserAction extends BaseAction {
 
-    private final Logger logger = Logger.getLogger(LoginAction.class);
+    private final Logger logger = Logger.getLogger(UserAction.class);
 
-    @Override
-    public String execute() throws Exception {
+
+    /**
+     * 用户登录
+     */
+    public String login(){
 
         logger.info(request.getContextPath());
         logger.info(session.getId());
@@ -21,7 +24,13 @@ public class LoginAction extends BaseAction {
 
         logger.info("serviceLocator: " + locator.getClass().toString());
 
+        return SUCCESS;
+    }
 
+    /**
+     * 用户注销
+     */
+    public String logout(){
         return SUCCESS;
     }
 

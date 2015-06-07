@@ -13,7 +13,7 @@
         <put-attribute name="footer" value="/framework/_footer.jsp"/>
     </definition>
 
-    <definition name="com.aiziyuer.webapp.usr.action.LoginAction" extends="baseLayout">
+    <definition name="com.aiziyuer.webapp.usr.action.UserAction" extends="baseLayout">
         <put-attribute name="title"  value="Login"/>
     </definition>
 

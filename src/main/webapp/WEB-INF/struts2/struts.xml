@@ -27,7 +27,13 @@
         </result-types>
 
         <action name="login"
-                class="com.aiziyuer.webapp.login.action.LoginAction" >
+                class="com.aiziyuer.webapp.usr.action.UserAction" method="login" >
+            <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
+        </action>
+
+
+        <action name="logout"
+                class="com.aiziyuer.webapp.usr.action.UserAction" method="logout" >
             <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
         </action>
     </package>
