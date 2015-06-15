@@ -2,6 +2,7 @@ package com.aiziyuer.webapp.usr.action;
 
 import com.aiziyuer.webapp.framework.BaseAction;
 import com.aiziyuer.webapp.framework.ServiceLocator;
+import com.aiziyuer.webapp.scripting.IRubyTester;
 import com.sun.istack.internal.logging.Logger;
 
 /**
@@ -23,6 +24,13 @@ public class UserAction extends BaseAction {
         ServiceLocator locator = serviceLocator.getService("serviceLocator");
 
         logger.info("serviceLocator: " + locator.getClass().toString());
+
+        IRubyTester iRubyTester= serviceLocator.getService("rubyTester");
+
+        String info = iRubyTester.sayHello();
+
+        logger.info("info: "+info);
+
 
         return SUCCESS;
     }

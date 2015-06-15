@@ -7,6 +7,7 @@
 	http://www.springframework.org/schema/task/spring-task.xsd">
 
     <import resource="applicationContext-jdbc.xml"/>
+    <import resource="applicationContext-scripts.xml"/>
 
     <bean id="serviceLocator" class="com.aiziyuer.webapp.framework.ServiceLocator"
           lazy-init="false"/>
