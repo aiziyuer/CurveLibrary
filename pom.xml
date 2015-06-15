@@ -88,6 +88,20 @@
             <version>2.3</version>
         </dependency>
 
+        <!--jRuby支持-->
+        <dependency>
+            <groupId>org.jruby</groupId>
+            <artifactId>jruby-complete</artifactId>
+            <version>1.7.20</version>
+        </dependency>
+
+        <!--jPython支持-->
+        <dependency>
+            <groupId>jython</groupId>
+            <artifactId>jython</artifactId>
+            <version>2.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
