@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+          class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 
         <!--Druid自动识别数据库并且加载驱动类 -->
         <!-- 基本属性 url、user、password -->

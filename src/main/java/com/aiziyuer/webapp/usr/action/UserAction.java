@@ -3,6 +3,7 @@ package com.aiziyuer.webapp.usr.action;
 import com.aiziyuer.webapp.framework.BaseAction;
 import com.aiziyuer.webapp.framework.ServiceLocator;
 import com.aiziyuer.webapp.scripting.IRubyTester;
+import com.aiziyuer.webapp.usr.bo.UserInfo;
 import com.sun.istack.internal.logging.Logger;
 
 /**
@@ -30,6 +31,12 @@ public class UserAction extends BaseAction {
         String info = iRubyTester.sayHello();
 
         logger.info("info: "+info);
+
+
+        UserInfo u = new UserInfo();
+        u.setUName("a");
+
+        logger.info(u.toString());
 
 
         return SUCCESS;
