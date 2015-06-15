@@ -4,10 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
 
-    <lang:defaults refresh-check-delay="100"/>
 
-    <lang:jruby id="rubyTester" refresh-check-delay="200" script-interfaces="com.aiziyuer.webapp.scripting.IRubyTester"
-                script-source="WEB-INF/ruby/ruby_tester.rb">
+    <lang:jruby id="rubyTester" refresh-check-delay="1000" script-interfaces="com.aiziyuer.webapp.scripting.IRubyTester"
+                script-source="classpath:scripts/ruby/ruby_tester.rb">
 
     </lang:jruby>
 
