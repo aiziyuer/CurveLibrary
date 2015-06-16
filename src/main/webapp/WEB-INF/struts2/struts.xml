@@ -13,7 +13,7 @@
 
 
     <!--出错时会提示更详细的错误信息-->
-    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
     <!--开发阶段配置，在web服务器出错时会尽量打印出来，一样也是生产阶段设置为false，避免后台结构被人发现。-->
     <constant name="struts.configuration.xml.reload" value="true"/>
@@ -21,19 +21,31 @@
     <!-- caution: in release version, this value must be set false -->
     <constant name="struts.devMode" value="true"/>
 
+    <!-- /////////////// 支持Restful 开始 //////////////////-->
+    <!--  指定控制器类的后缀为 Controller -->
+    <constant name="struts.convention.action.suffix" value="Controller"/>
+    <constant name="struts.convention.action.mapAllMatches" value="true"/>
+    <!-- 指定 Action 所在包继承的父包 -->
+    <constant name="struts.convention.default.parent.package" value="rest-default"/>
+    <constant name="struts.convention.package.locators" value="control"/>
+    <!--指定支持的格式-->
+    <constant name="struts.action.extension" value="xhtml,xml,json,action"/>
+
+    <!-- ////////////// 支持Restful 结束 ///////////////////-->
+
     <package name="default" namespace="/" extends="struts-default">
         <result-types>
-            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
 
         <action name="login"
-                class="com.aiziyuer.webapp.usr.action.UserAction" method="login" >
+                class="com.aiziyuer.webapp.usr.action.UserAction" method="login">
             <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
         </action>
 
 
         <action name="logout"
-                class="com.aiziyuer.webapp.usr.action.UserAction" method="logout" >
+                class="com.aiziyuer.webapp.usr.action.UserAction" method="logout">
             <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
         </action>
     </package>
