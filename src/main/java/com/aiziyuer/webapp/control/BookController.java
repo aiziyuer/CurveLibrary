@@ -2,14 +2,10 @@ package com.aiziyuer.webapp.control;
 
 import com.aiziyuer.webapp.book.Book;
 import com.aiziyuer.webapp.book.BookService;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.rest.DefaultHttpHeaders;
 import org.apache.struts2.rest.HttpHeaders;
-
-import java.util.List;
 
 /**
  * 测试
@@ -17,73 +13,77 @@ import java.util.List;
 @Results(@Result(name = "success"
         , type = "redirectAction"
         , params = {"actionName", "book"}))
-public class BookController extends ActionSupport
-        implements ModelDriven<Object> {
+public class BookController extends BaseController<Book>{
 
     // 封装 id 请求参数的属性
     private int id;
-    private Book model = new Book();
-
-    private List<Book> list;
 
     // 定义业务逻辑组件
     private BookService bookService = new BookService();
 
     // 获取 id 请求参数的方法
+    @Override
     public void setId(int id) {
         this.id = id;
         // 取得方法时顺带初始化 model 对象
         if (id > 0) {
-            this.model = bookService.get(id);
+            data= bookService.get(id);
         }
     }
 
+    @Override
     public int getId() {
         return this.id;
     }
 
     // 处理不带 id 参数的 GET 请求
     // 进入首页
+    @Override
     public HttpHeaders index() {
-        list = bookService.getAll();
+        dataList = bookService.getAll();
         return new DefaultHttpHeaders("index")
                 .disableCaching();
     }
 
     // 处理不带 id 参数的 GET 请求
     // 进入添加新图书。
+    @Override
     public String editNew() {
         // 创建一个新图书
-        model = new Book();
+        data = new Book();
         return "editNew";
     }
 
     // 处理不带 id 参数的 POST 请求
     // 保存新图书
+    @Override
     public HttpHeaders create() {
         // 保存图书
-        bookService.saveOrUpdate(model);
+        bookService.saveOrUpdate(data);
         addActionMessage("添加图书成功");
         return new DefaultHttpHeaders("success")
-                .setLocationId(model.getId());
+                .setLocationId(data.getId());
     }
 
     // 处理带 id 参数的 GET 请求
     // 显示指定图书
+    @Override
     public HttpHeaders show() {
         return new DefaultHttpHeaders("show");
     }
 
     // 处理带 id 参数、且指定操作 edit 资源的 GET 请求
     // 进入编辑页面 (book-edit.jsp)
+    @Override
     public String edit() {
         return "edit";
     }
 
     // 处理带 id 参数的 PUT 请求
     // 修改图书
+    @Override
     public String update() {
-        bookService.saveOrUpdate(model);
+        bookService.saveOrUpdate(data);
         addActionMessage("图书编辑成功！");
         return "success";
     }
@@ -96,14 +96,11 @@ public class BookController extends ActionSupport
 
     // 处理带 id 参数的 DELETE 请求
     // 删除图书
+    @Override
     public String destroy() {
         bookService.remove(id);
         addActionMessage("成功删除 ID 为" + id + "的图书！");
         return "success";
     }
 
-    // 实现 ModelDriven 接口必须实现的 getModel 方法
-    public Object getModel() {
-        return (list != null ? list : model);
-    }
 }
