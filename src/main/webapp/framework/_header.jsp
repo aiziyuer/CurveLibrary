@@ -1,5 +1,7 @@
 <%@ page isELIgnored="false" %>
 
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/framework/assets/image/application.ico" />
+
 <!-- Bootstrap -->
 <link href="${pageContext.request.contextPath}/framework/assets/stylesheets/styles.css" rel="stylesheet">
 
