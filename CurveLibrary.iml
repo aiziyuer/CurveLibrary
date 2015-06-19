@@ -4,11 +4,6 @@
     <option name="compassConfigPath" value="$MODULE_DIR$/src/main/webapp/assets/config.rb" />
     <option name="compassExecutableFilePath" value="$USER_HOME$/.gem/jruby/1.9/gems/compass-1.1.0.alpha.3/bin/compass" />
     <option name="compassSupportEnabled" value="true" />
-    <option name="importPaths">
-      <list>
-        <option value="$USER_HOME$/.gem/jruby/1.9/gems/compass-core-1.1.0.alpha.3/stylesheets" />
-      </list>
-    </option>
   </component>
   <component name="FacetManager">
     <facet type="web" name="Web">

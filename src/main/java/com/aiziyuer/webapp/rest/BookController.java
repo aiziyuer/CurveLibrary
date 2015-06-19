@@ -1,7 +1,8 @@
-package com.aiziyuer.webapp.control;
+package com.aiziyuer.webapp.rest;
 
-import com.aiziyuer.webapp.book.Book;
-import com.aiziyuer.webapp.book.BookService;
+import com.aiziyuer.webapp.rest.book.Book;
+import com.aiziyuer.webapp.rest.book.BookService;
+import com.aiziyuer.webapp.framework.BaseController;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.rest.DefaultHttpHeaders;
@@ -13,7 +14,7 @@ import org.apache.struts2.rest.HttpHeaders;
 @Results(@Result(name = "success"
         , type = "redirectAction"
         , params = {"actionName", "book"}))
-public class BookController extends BaseController<Book>{
+public class BookController extends BaseController<Book> {
 
     // 封装 id 请求参数的属性
     private int id;

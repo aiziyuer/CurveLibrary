@@ -1,4 +1,4 @@
-package com.aiziyuer.webapp.book;
+package com.aiziyuer.webapp.rest.book;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.aiziyuer.webapp.control;
+package com.aiziyuer.webapp.framework;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;

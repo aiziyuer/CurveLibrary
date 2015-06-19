@@ -1,4 +1,4 @@
-package com.aiziyuer.webapp.usr.bo;
+package com.aiziyuer.webapp.struts.usr.bo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

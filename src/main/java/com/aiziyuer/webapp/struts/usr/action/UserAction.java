@@ -1,9 +1,9 @@
-package com.aiziyuer.webapp.usr.action;
+package com.aiziyuer.webapp.struts.usr.action;
 
 import com.aiziyuer.webapp.framework.BaseAction;
 import com.aiziyuer.webapp.framework.ServiceLocator;
 import com.aiziyuer.webapp.scripting.IRubyTester;
-import com.aiziyuer.webapp.usr.bo.UserInfo;
+import com.aiziyuer.webapp.struts.usr.bo.UserInfo;
 import com.sun.istack.internal.logging.Logger;
 
 /**
