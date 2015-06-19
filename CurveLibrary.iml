@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="CompassSettings">
-    <option name="compassConfigPath" value="$MODULE_DIR$/src/main/webapp/assets/config.rb" />
-    <option name="compassExecutableFilePath" value="$USER_HOME$/.gem/jruby/1.9/gems/compass-1.1.0.alpha.3/bin/compass" />
+    <option name="compassConfigPath" value="$MODULE_DIR$/src/main/webapp/framework/assets/config.rb" />
+    <option name="compassExecutableFilePath" value="$USER_HOME$/.rvm/gems/ruby-2.0.0-p643/gems/compass-1.0.3/bin/compass" />
     <option name="compassSupportEnabled" value="true" />
+    <option name="importPaths">
+      <list>
+        <option value="$USER_HOME$/.rvm/gems/ruby-2.0.0-p643/gems/compass-core-1.0.3/stylesheets" />
+        <option value="$USER_HOME$/.rvm/gems/ruby-2.0.0-p643/gems/bootstrap-sass-3.3.4.1/assets/stylesheets" />
+      </list>
+    </option>
   </component>
   <component name="FacetManager">
     <facet type="web" name="Web">
@@ -37,13 +43,6 @@
         </fileset>
       </configuration>
     </facet>
-    <facet type="JRUBY" name="JRuby">
-      <configuration>
-        <JRUBY_FACET_CONFIG_ID NAME="JRUBY_SDK_NAME" VALUE="jruby-1.7.20.1-p551" />
-        <LOAD_PATH number="1" string0="$MODULE_DIR$/../repository/org/jruby/jruby/1.7.20" />
-        <I18N_FOLDERS number="0" />
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -56,9 +55,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat7:server" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="jruby-1.7.20.1-p551 facet library" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="compass-import-once (v1.0.5, jruby-1.7.20.1-p551) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.14, jruby-1.7.20.1-p551) [gem]" level="application" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-core:2.3.16" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts.xwork:xwork-core:2.3.16" level="project" />
     <orderEntry type="library" name="Maven: asm:asm:3.3" level="project" />
@@ -108,5 +104,6 @@
     <orderEntry type="library" name="Maven: org.jruby:jruby-complete:1.7.20" level="project" />
     <orderEntry type="library" name="Maven: jython:jython:2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.4" level="project" />
+    <orderEntry type="library" name="compass-library" level="project" />
   </component>
 </module>

@@ -32,7 +32,9 @@
                         <s:text name="app.nav.dropdown.profile"/><b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><s:text name="app.nav.dropdown.login"/></a></li>
+                        <li>
+                            <s:a action="login" namespace="/usr"><s:text name="app.nav.dropdown.login"/></s:a>
+                        </li>
                         <li class="divider"></li>
                         <li><a href="#"><s:text name="app.nav.dropdown.logout"/></a></li>
                     </ul>

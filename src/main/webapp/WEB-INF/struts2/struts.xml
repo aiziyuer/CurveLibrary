@@ -22,7 +22,7 @@
     <constant name="struts.devMode" value="true"/>
 
     <!-- /////////////// 支持Restful 开始 //////////////////-->
-    <constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.PrefixBasedActionMapper" />
+    <constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.PrefixBasedActionMapper"/>
     <constant name="struts.mapper.prefixMapping" value="/rest:rest,:struts"/>
 
 
@@ -34,7 +34,7 @@
     <constant name="struts.convention.package.locators" value="rest"/>
 
     <!--指定支持的格式-->
-    <constant name="struts.action.extension" value="xhtml,xml,json,action"/>
+    <constant name="struts.action.extension" value="action,json,xml,xhtml"/>
 
     <!-- ////////////// 支持Restful 结束 ///////////////////-->
 
@@ -43,18 +43,31 @@
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
 
-        <action name="login"
-                class="com.aiziyuer.webapp.struts.usr.action.UserAction" method="login">
-            <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
+        <action name="home">
+            <result type="tiles">home.page</result>
         </action>
 
+
+    </package>
+
+    <package name="usr" namespace="/usr" extends="default">
+
+        <action name="login"
+                class="com.aiziyuer.webapp.struts.usr.action.UserAction" method="login">
+            <result name="success" type="tiles">login.page</result>
+        </action>
+
+        <action name="tryLogin"
+                class="com.aiziyuer.webapp.struts.usr.action.UserAction" method="tryLogin">
+            <result name="success" type="tiles">login.page</result>
+        </action>
 
         <action name="logout"
                 class="com.aiziyuer.webapp.struts.usr.action.UserAction" method="logout">
-            <result name="success" type="tiles">com.aiziyuer.webapp.login.action.LoginAction</result>
+            <result name="success" type="tiles">login.page</result>
         </action>
-    </package>
 
+    </package>
 
     <!--支持rest接口设计-->
     <package name="rest" namespace="/rest" extends="rest-default"/>
