@@ -10,14 +10,7 @@
         <property name="passwordHelper" ref="passwordHelper"/>
     </bean>
 
-    <bean id="userDao" class="com.aiziyuer.webapp.shiro.dao.impl.UserDaoImpl">
-
-    </bean>
-
     <bean id="roleBiz" class="com.aiziyuer.webapp.shiro.biz.impl.RoleBizImpl">
-
-
     </bean>
-
 
 </beans>

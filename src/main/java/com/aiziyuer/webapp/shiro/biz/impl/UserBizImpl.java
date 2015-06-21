@@ -1,12 +1,11 @@
 package com.aiziyuer.webapp.shiro.biz.impl;
 
+import com.aiziyuer.webapp.framework.util.PasswordHelper;
 import com.aiziyuer.webapp.shiro.biz.IRoleBiz;
 import com.aiziyuer.webapp.shiro.biz.IUserBiz;
-import com.aiziyuer.webapp.shiro.dao.IUserDao;
+import com.aiziyuer.webapp.shiro.dao.UserDao;
 import com.aiziyuer.webapp.shiro.entity.User;
-import com.aiziyuer.webapp.framework.util.PasswordHelper;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Set;
@@ -17,13 +16,10 @@ import java.util.Set;
 @Data
 public class UserBizImpl implements IUserBiz {
 
-    @Autowired
-    private IUserDao userDao;
+    private UserDao userDao;
 
-    @Autowired
     private IRoleBiz roleBiz;
 
-    @Autowired
     private PasswordHelper passwordHelper;
 
 

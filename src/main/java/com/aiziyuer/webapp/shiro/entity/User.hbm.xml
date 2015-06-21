@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.aiziyuer.webapp.shiro.entity">
+    <!--<class name="User">-->
+        <!--<id name="id" column="id">-->
+            <!--<generator class="native"/>-->
+        <!--</id>-->
+
+        <!--<property name="organizationId" column="organization_id"/>-->
+        <!--<property name="username" column="uname"/>-->
+        <!--<property name="password" column="passwd"/>-->
+        <!--<property name="salt" column="salt"/>-->
+    <!--</class>-->
+
+    <!--<query name="Person.findByName">-->
+        <!--<![CDATA[select t from User t where t.username = :name ]]>-->
+    <!--</query>-->
+
+</hibernate-mapping>

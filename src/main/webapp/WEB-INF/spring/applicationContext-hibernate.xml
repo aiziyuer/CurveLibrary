@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="namingStrategy"
+          class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="org.hibernate.cfg.ImprovedNamingStrategy.INSTANCE"/>
+    </bean>
+
+    <!--Session 统一管理-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceProxy"/>
+        <property name="namingStrategy" ref="namingStrategy"/>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:com/aiziyuer/webapp/shiro/entity/*.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="finderIntroductionAdvisor" class="com.aiziyuer.webapp.hibernate.finder.impl.FinderIntroductionAdvisor"/>
+
+    <bean id="extendedFinderNamingStrategy"
+          class="com.aiziyuer.webapp.hibernate.finder.impl.ExtendedFinderNamingStrategy" />
+
+    <bean id="abstractDaoTarget"
+          class="com.aiziyuer.webapp.hibernate.GenericDaoHibernateImpl" abstract="true">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="namingStrategy" ref="extendedFinderNamingStrategy"/>
+    </bean>
+
+    <bean id="abstractDao"
+          class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>finderIntroductionAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--  Dao Layer instances -->
+    <bean id="userDao" parent="abstractDao">
+        <property name="proxyInterfaces" value="com.aiziyuer.webapp.shiro.dao.UserDao"/>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg value="com.aiziyuer.webapp.shiro.entity.User"/>
+            </bean>
+        </property>
+    </bean>
+
+</beans>
