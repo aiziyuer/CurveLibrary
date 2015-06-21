@@ -16,6 +16,7 @@
                             scheduler="myScheduler"/>
 
     <import resource="applicationContext-jdbc.xml"/>
+    <import resource="applicationContext-hibernate.xml"/>
     <import resource="applicationContext-beans.xml"/>
     <import resource="applicationContext-cache.xml"/>
     <import resource="applicationContext-shiro.xml"/>
