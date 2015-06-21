@@ -1,12 +1,14 @@
 package com.aiziyuer.webapp.struts.usr.action;
 
 import com.aiziyuer.webapp.framework.BaseAction;
-import com.aiziyuer.webapp.framework.ServiceLocator;
 import com.aiziyuer.webapp.scripting.IRubyTester;
 import com.aiziyuer.webapp.struts.usr.bo.UserInfo;
 import com.sun.istack.internal.logging.Logger;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 
 /**
  * 登录类
@@ -24,36 +26,39 @@ public class UserAction extends BaseAction {
     /**
      * 用户登录
      */
-    public String tryLogin()
-    {
+    public String tryLogin() {
+
+        Subject currentUser = SecurityUtils.getSubject();
+
+        UsernamePasswordToken token = new UsernamePasswordToken(email, password);
+        token.setRememberMe(true);
+
+        currentUser.login(token);
+
         //TODO 检查用户是否已经登录
         System.out.println("");
 
 
         //TODO 用户登录，刷新Session
 
-       return SUCCESS;
+        return SUCCESS;
     }
 
 
     /**
      * 获取用户登录页面
      */
-    public String login(){
+    public String login() {
         //TODO 检查是否需要登录，如果没有登录跳转到登录页面登录
 
         logger.info(request.getContextPath());
         logger.info(session.getId());
 
-        ServiceLocator locator = serviceLocator.getService("serviceLocator");
-
-        logger.info("serviceLocator: " + locator.getClass().toString());
-
-        IRubyTester iRubyTester= serviceLocator.getService("rubyTester");
+        IRubyTester iRubyTester = serviceLocator.getService("rubyTester");
 
         String info = iRubyTester.sayHello();
 
-        logger.info("info: "+info);
+        logger.info("info: " + info);
 
 
         UserInfo u = new UserInfo();
@@ -68,7 +73,7 @@ public class UserAction extends BaseAction {
     /**
      * 用户注销
      */
-    public String logout(){
+    public String logout() {
         return SUCCESS;
     }
 

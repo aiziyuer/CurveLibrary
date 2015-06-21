@@ -6,15 +6,19 @@
 	http://www.springframework.org/schema/task
 	http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <import resource="applicationContext-jdbc.xml"/>
-    <import resource="applicationContext-scripts.xml"/>
-
-    <bean id="serviceLocator" class="com.aiziyuer.webapp.framework.ServiceLocator"
-          lazy-init="false"/>
+    <!--全局的Spring工具类-->
+    <bean id="serviceLocator" class="com.aiziyuer.webapp.framework.util.ServiceLocator" lazy-init="false"/>
+    <bean id="passwordHelper" class="com.aiziyuer.webapp.framework.util.PasswordHelper"/>
 
     <task:executor id="myExecutor" pool-size="5"/>
     <task:scheduler id="myScheduler" pool-size="10"/>
     <task:annotation-driven executor="myExecutor"
                             scheduler="myScheduler"/>
+
+    <import resource="applicationContext-jdbc.xml"/>
+    <import resource="applicationContext-beans.xml"/>
+    <import resource="applicationContext-cache.xml"/>
+    <import resource="applicationContext-shiro.xml"/>
+    <import resource="applicationContext-scripts.xml"/>
 
 </beans>

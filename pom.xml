@@ -11,6 +11,7 @@
     <properties>
         <spring.version>4.0.3.RELEASE</spring.version>
         <struts.version>2.3.16</struts.version>
+        <shiro.version>1.2.3</shiro.version>
     </properties>
 
     <dependencies>
@@ -61,7 +62,11 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -79,7 +84,14 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <!--对象托管及数据库事务管理 开始-->
+
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.10.0</version>
+        </dependency>
 
         <!--数据库连接库-->
         <dependency>
@@ -117,6 +129,28 @@
             <groupId>jython</groupId>
             <artifactId>jython</artifactId>
             <version>2.1</version>
+        </dependency>
+
+        <!--Shiro支持-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-quartz</artifactId>
+            <version>${shiro.version}</version>
         </dependency>
 
         <!--懒人专用Lombok-->

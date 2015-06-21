@@ -1,4 +1,4 @@
-package com.aiziyuer.webapp.framework;
+package com.aiziyuer.webapp.framework.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;

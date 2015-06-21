@@ -1,5 +1,6 @@
 package com.aiziyuer.webapp.framework;
 
+import com.aiziyuer.webapp.framework.util.ServiceLocator;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
