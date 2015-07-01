@@ -16,7 +16,7 @@
         <property name="namingStrategy" ref="namingStrategy"/>
         <property name="mappingLocations">
             <list>
-                <value>classpath:com/aiziyuer/webapp/shiro/entity/*.xml</value>
+                <value>classpath:com/aiziyuer/webapp/entity/**/*.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -28,16 +28,6 @@
         </property>
     </bean>
 
-    <bean id="finderIntroductionAdvisor" class="com.aiziyuer.webapp.hibernate.finder.impl.FinderIntroductionAdvisor"/>
-
-    <bean id="extendedFinderNamingStrategy"
-          class="com.aiziyuer.webapp.hibernate.finder.impl.ExtendedFinderNamingStrategy" />
-
-    <bean id="abstractDaoTarget"
-          class="com.aiziyuer.webapp.hibernate.GenericDaoHibernateImpl" abstract="true">
-        <property name="sessionFactory" ref="sessionFactory"/>
-        <property name="namingStrategy" ref="extendedFinderNamingStrategy"/>
-    </bean>
 
     <bean id="abstractDao"
           class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
@@ -49,13 +39,7 @@
     </bean>
 
     <!--  Dao Layer instances -->
-    <bean id="userDao" parent="abstractDao">
-        <property name="proxyInterfaces" value="com.aiziyuer.webapp.shiro.dao.UserDao"/>
-        <property name="target">
-            <bean parent="abstractDaoTarget">
-                <constructor-arg value="com.aiziyuer.webapp.shiro.entity.User"/>
-            </bean>
-        </property>
+    <bean id="userDao" class="com.aiziyuer.webapp.struts.usr.dao.impl.UserDaoImpl">
     </bean>
 
 </beans>

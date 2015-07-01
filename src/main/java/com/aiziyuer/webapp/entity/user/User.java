@@ -1,6 +1,7 @@
-package com.aiziyuer.webapp.shiro.entity;
+package com.aiziyuer.webapp.entity.user;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "tbl_user")
 @NamedQuery(name = "User.findByName", query = "select t from User t where t.username=:name")
 @Data
+@ToString(callSuper=true, includeFieldNames=true)
 public class User implements Serializable {
 
     /** 用户标识 */

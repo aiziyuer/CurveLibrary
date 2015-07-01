@@ -4,13 +4,8 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--全局的Spring工具类-->
-    <bean id="userBiz" class="com.aiziyuer.webapp.shiro.biz.impl.UserBizImpl">
+    <bean id="userBiz" class="com.aiziyuer.webapp.struts.usr.biz.impl.UserBizImp">
         <property name="userDao" ref="userDao"/>
-        <property name="roleBiz" ref="roleBiz" />
-        <property name="passwordHelper" ref="passwordHelper"/>
-    </bean>
-
-    <bean id="roleBiz" class="com.aiziyuer.webapp.shiro.biz.impl.RoleBizImpl">
     </bean>
 
 </beans>

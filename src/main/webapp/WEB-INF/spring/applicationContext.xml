@@ -8,7 +8,6 @@
 
     <!--全局的Spring工具类-->
     <bean id="serviceLocator" class="com.aiziyuer.webapp.framework.util.ServiceLocator" lazy-init="false"/>
-    <bean id="passwordHelper" class="com.aiziyuer.webapp.framework.util.PasswordHelper"/>
 
     <task:executor id="myExecutor" pool-size="5"/>
     <task:scheduler id="myScheduler" pool-size="10"/>
@@ -18,8 +17,7 @@
     <import resource="applicationContext-jdbc.xml"/>
     <import resource="applicationContext-hibernate.xml"/>
     <import resource="applicationContext-beans.xml"/>
-    <import resource="applicationContext-cache.xml"/>
-    <import resource="applicationContext-shiro.xml"/>
-    <import resource="applicationContext-scripts.xml"/>
+    <!--脚本刷新经常导致进程重启挂死，暂时注释脚本-->
+    <!--<import resource="applicationContext-scripts.xml"/>-->
 
 </beans>

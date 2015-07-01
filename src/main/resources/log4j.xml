@@ -10,7 +10,7 @@
             <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
         </File>
 
-        <Async name="ASYNC">
+        <Async name="root">
             <AppenderRef ref="TEMP"/>
             <AppenderRef ref="CONSOLE"/>
         </Async>
@@ -18,8 +18,12 @@
 
 
     <Loggers>
+        <!--分类自定义包名-->
+        <Logger name="com.foo.Bar" level="trace" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <Root level="debug">
-            <AppenderRef ref="ASYNC"/>
+            <AppenderRef ref="root"/>
         </Root>
     </Loggers>
 

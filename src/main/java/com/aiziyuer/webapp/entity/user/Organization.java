@@ -1,4 +1,4 @@
-package com.aiziyuer.webapp.shiro.entity;
+package com.aiziyuer.webapp.entity.user;
 
 import lombok.Data;
 
